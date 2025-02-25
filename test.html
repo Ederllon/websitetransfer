@@ -158,16 +158,18 @@
 
 </body>
 <script>
-let neffect1  = new Audio('./effect1wav.wav');
-function efect_action1(){
-    neffect1.volume = 0.5;
-    neffect1.currentTime = 0;
-    neffect1.play();
+function effect_action(link,volume,start,timePause){
+    let neffect  = new Audio(link);
+    neffect.currentTime = start;
+    neffect.volume = volume;
+    neffect.play();
 setTimeout(function(){
-    neffect1.pause()
-},180)
+    neffect.pause()
+},timePause)
 }
-
+function effect_audio1(){
+    effect_action('./effect1wav.wav',0.5,0,180);
+}
 
 const Style = document.querySelector(".Style"),
     Body = document.body,
@@ -191,7 +193,7 @@ console.log("mobile : ", mobileScanner);
 
 
 function darkAction() {
-    efect_action1();
+    effect_audio1();
     (Title.innerHTML = "NinjaKat - Darkmode"),
         (Style.innerHTML = "*{user-select:none}body{overflow-y:scroll;overflow-x:hidden;background:#fff}@keyframes body_white_to_black{from{background:#fff}to{background:#36343f}}@keyframes body_black_to_white{from{background:#36343f}to{background:#fff}}::-webkit-scrollbar{width:9px;background:#d0d0df}::-webkit-scrollbar-thumb{background:rgba(125,150,175,0.6);border-radius:500px}::-webkit-scrollbar-thumb:hover{background:rgba(100,155,190,0.7);transition:background-color 2.5s ease}::-webkit-scrollbar-thumb:active{background:rgba(100,175,210,0.8)}@keyframes scrollbar_wtb{0%{background:#d0d0df}100%{background:#40404f}}#buttonMode{margin-top:25%;height:50px;width:50px;padding:1.5px;position:relative;border:solid 1px #bbb;background:rgba(0,0,0,0);transition:background-color .5s ease;border-radius:10px}#buttonMode:hover{background:#eee;box-shadow:1px 1px 1px 1px #80808f}#buttonMode:active{background:#999}.conteiner{border:solid 1px #bbb;width:310px;height:310px;margin:50px;padding:15px;background:#eee;position:relative;color:#444;border-radius:10px;font-family:'Space Grotesk',sans-serif;text-align:center}#conteiner_conteiner{display:flex;justify-content:center;margin:auto;transform:translateY(40%)}#nameBtn{font-size:xx-large;text-align:center;transform:translateY(-1px);color:#444}.btnColor{color:#9a9a9f}.pConteiner{padding-left:25px;padding-right:25px;text-justify:auto;overflow:hidden;flex-flow:column;text-align:left}.pConteiner::first-letter{font-size:20px}.linkline{transform:translateY(250%);text-align:left;text-justify:auto;overflow:hidden;flex-flow:column;text-align:left;padding-left:25px;padding-right:25px}.linkline::first-letter{font-size:auto}.llink{transform:translate(-150px,121px);position:absolute;font-size:small;font-weight:100;margin-bottom:5px}#numberlink{transform:translate(-150px,100px);position:absolute}a{text-decoration:none;color:#444}#wpp:hover{color:#6a6;text-shadow:0 0 1.5px #0f0}#lkd:hover{color:#66a;text-shadow:0 0 1.5px #00f}#git:hover{color:#a66;text-shadow:0 0 1.5px red}.mousehover{cursor:pointer}#buttonMode:hover{background:#25232f; box-shadow: 1px 1px 1px 1px  #20202f;} #buttonMode:active{background:#33333f}"),
         (Body.style.animation = "body_white_to_black 500ms ease-in"),
@@ -218,7 +220,7 @@ function darkAction() {
         (Style.innerHTML = "*{user-select:none}body{overflow-y:scroll;overflow-x:hidden;background:#fff}@keyframes body_white_to_black{from{background:#fff}to{background:#36343f}}@keyframes body_black_to_white{from{background:#36343f}to{background:#fff}}::-webkit-scrollbar{width:9px;background:#d0d0df}::-webkit-scrollbar-thumb{background:rgba(125,150,175,0.6);border-radius:500px}::-webkit-scrollbar-thumb:hover{background:rgba(100,155,190,0.7);transition:background-color 2.5s ease}::-webkit-scrollbar-thumb:active{background:rgba(100,175,210,0.8)}@keyframes scrollbar_wtb{0%{background:#d0d0df}100%{background:#40404f}}#buttonMode{margin-top:25%;height:50px;width:50px;padding:1.5px;position:relative;border:solid 1px #bbb;background:rgba(0,0,0,0);transition:background-color .5s ease;border-radius:10px}#buttonMode:hover{background:#eee;box-shadow:1px 1px 1px 1px #80808f}#buttonMode:active{background:#999}.conteiner{border:solid 1px #bbb;width:310px;height:310px;margin:50px;padding:15px;background:#eee;position:relative;color:#444;border-radius:10px;font-family:'Space Grotesk',sans-serif;text-align:center}#conteiner_conteiner{display:flex;justify-content:center;margin:auto;transform:translateY(40%)}#nameBtn{font-size:xx-large;text-align:center;transform:translateY(-1px);color:#444}.btnColor{color:#9a9a9f}.pConteiner{padding-left:25px;padding-right:25px;text-justify:auto;overflow:hidden;flex-flow:column;text-align:left}.pConteiner::first-letter{font-size:20px}.linkline{transform:translateY(250%);text-align:left;text-justify:auto;overflow:hidden;flex-flow:column;text-align:left;padding-left:25px;padding-right:25px}.linkline::first-letter{font-size:auto}.llink{transform:translate(-150px,121px);position:absolute;font-size:small;font-weight:100;margin-bottom:5px}#numberlink{transform:translate(-150px,100px);position:absolute}a{text-decoration:none;color:#444}#wpp:hover{color:#6a6;text-shadow:0 0 1.5px #0f0}#lkd:hover{color:#66a;text-shadow:0 0 1.5px #00f}#git:hover{color:#a66;text-shadow:0 0 1.5px red}.mousehover{cursor:pointer}#buttonMode:hover{background:#25232f; box-shadow: 1px 1px 1px 1px  #20202f;} #buttonMode:active{background:#33333f}::-webkit-scrollbar{width:9px;background:#40404f;}::-webkit-scrollbar-thumb{background:rgba(100,100,130,0.6); border-radius:500px;}::-webkit-scrollbar-thumb:hover{background:rgba(140,100,180,0.7);}::-webkit-scrollbar-thumb:active{background:rgba(170,100,200,0.8);}a{color:#999}.conteiner{height:300px;margin:5px;padding:20px;position:absolute;transform:translateY(50px);}#conteiner2{transform:translateY(400px);}#conteiner3{transform:translateY(750px);}#emaillink{position:relative;transform:translateY(900px);float:left;height:0px;padding-bottom:70px;}#numberlink{position:relative;transform: translateY(850px);float:left;}")
 }
 function lightAction() {
-    efect_action1();
+    effect_audio1();
     (Title.innerHTML = "NinjaKat - Lightmode"),
         (Style.innerHTML = "*{user-select:none}body{overflow-y:scroll;overflow-x:hidden;background:#fff}@keyframes body_white_to_black{from{background:#fff}to{background:#36343f}}@keyframes body_black_to_white{from{background:#36343f}to{background:#fff}}::-webkit-scrollbar{width:9px;background:#d0d0df}::-webkit-scrollbar-thumb{background:rgba(125,150,175,0.6);border-radius:500px}::-webkit-scrollbar-thumb:hover{background:rgba(100,155,190,0.7);transition:background-color 2.5s ease}::-webkit-scrollbar-thumb:active{background:rgba(100,175,210,0.8)}@keyframes scrollbar_wtb{0%{background:#d0d0df}100%{background:#40404f}}#buttonMode{margin-top:25%;height:50px;width:50px;padding:1.5px;position:relative;border:solid 1px #bbb;background:rgba(0,0,0,0);transition:background-color .5s ease;border-radius:10px}#buttonMode:hover{background:#eee;box-shadow:1px 1px 1px 1px #80808f}#buttonMode:active{background:#999}.conteiner{border:solid 1px #bbb;width:310px;height:310px;margin:50px;padding:15px;background:#eee;position:relative;color:#444;border-radius:10px;font-family:'Space Grotesk',sans-serif;text-align:center}#conteiner_conteiner{display:flex;justify-content:center;margin:auto;transform:translateY(40%)}#nameBtn{font-size:xx-large;text-align:center;transform:translateY(-1px);color:#444}.btnColor{color:#9a9a9f}.pConteiner{padding-left:25px;padding-right:25px;text-justify:auto;overflow:hidden;flex-flow:column;text-align:left}.pConteiner::first-letter{font-size:20px}.linkline{transform:translateY(250%);text-align:left;text-justify:auto;overflow:hidden;flex-flow:column;text-align:left;padding-left:25px;padding-right:25px}.linkline::first-letter{font-size:auto}.llink{transform:translate(-150px,121px);position:absolute;font-size:small;font-weight:100;margin-bottom:5px}#numberlink{transform:translate(-150px,100px);position:absolute}a{text-decoration:none;color:#444}#wpp:hover{color:#6a6;text-shadow:0 0 1.5px #0f0}#lkd:hover{color:#66a;text-shadow:0 0 1.5px #00f}#git:hover{color:#a66;text-shadow:0 0 1.5px red}.mousehover{cursor:pointer}#buttonMode:hover{background:#eee;  box-shadow: 1px 1px 1px 1px  #80808f;} #buttonMode:active{background:#999}"),
         (Body.style.animation = "body_black_to_white 500ms ease-in"),
